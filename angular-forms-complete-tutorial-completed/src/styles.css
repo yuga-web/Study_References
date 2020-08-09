@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    min-height: 100vh;
+    background: linear-gradient(to top,#2980b9,#2c3e50);   
+}
+
+h4 {
+    color: #9c9a9a;
+}
+
+label {
+    font-weight: 700;
+    color: #aba9a9;
+}
+
+.custom-invalid-feedback {
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #FC3939;
+    text-shadow: 0 0 black;
+}
+
+h1  {
+    font-weight: 700;
+}

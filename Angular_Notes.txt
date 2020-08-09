@@ -1,0 +1,258 @@
+16.06.2020
+Angular Topics
+	Installation:
+	Nodejs,VisualStudioCode,Git and Github
+	Cmd:
+		node -v
+		npm -v
+		ng version
+		ng install -g@angular/cli
+		ng new AppFirst
+		ng serve
+		(want to change port) ng serve --port 4401
+		import the folder to the VS
+
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+17.06.2020
+Angular Architecture
+	Modules->Components(html and class) +Services(Business Logic)
+Components:
+	Template:
+		Html,View,UI
+	Class:
+		Code,typescript,data and methods
+	Metadata:
+		Information->Decorator (e.g) @Components
+Generating new components:
+	ng g c test
+
+Interpolation
+Property binding
+Class Binding
+Style Binding
+Event Binding
+Template Reference Variable
+
+Two way binding
+	   --  > View
+data binding                event binding
+	         Class<---]
+ngModel,....add FormsModule in app.module.ts
+
+Structural Directives
+	ngIf
+	ngSwitch
+	ngFor
+
+Component interaction
+	parent AppComponent
+	Child AppComponent
+Using @Input and @Output
+Note:
+@Output the event message onclick of buuton is not working
+
+Pipes
+	numbers
+	cases
+	date cant use short date as pipes
+
+Dependency Injection(DI)
+	DI as a design pattern
+	DI as a framework
+Using Services
+To generate Services --- ng g s employee(name of the service)
+ injecting data using Services
+
+Http Observable
+import HttpClientModule 
+create interface
+create .json file since no url are used
+connect service file with component file
+
+Http Error Handling
+Confused with some errors
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+18.06.2020
+
+Office:
+
+Angular:
+
+Primeng Framework
+ 
+Has rich UI components for angular
+
+In Cmd
+C:/Users/Lenovo/projectname>
+
+
+npm install primeng --save
+
+npm install primeicons --save
+
+npm install font-awesome --save
+
+npm install @angular/cdk --save
+
+
+Open angular.json:
+and paste in Style section:
+
+"./node_modules/primeicons/primeicons.css",
+"./node_modules/primeng/resourses/themes/nova-light/theme.css",
+"./node_modules/primeng/resourses/primeng.min.css",
+
+Generate components
+ ng g c helloworld
+
+
+Then in app-routing.module.ts add the following
+
+const routes:Routes =[ 
+{path:'hello',component : HelloworldComponent}
+];
+
+Add in app.component.html
+
+<router-outlet></router-outlet>
+
+then...run:
+ng serve
+
+
+then to use primeng:
+paste in app.module.ts
+import { DropdownModule} from 'primeng/dropdown';
+ paste under @ngModule:
+	DropdownModule,
+
+
+new........some..points
+ import { MenuItem} from 'primeng/components/common/api';
+install:
+npm install @angular/animation --save
+
+...............New Project.............
+
+npm install -g json-server
+
+json-server -p 3000 database.json
+
+To extract gitHub files
+
+
+----------------------Project Crud Operation:------------------------------------
+
+ng new crud
+ng serve
+npm install bootstrap -S
+npm install jquery -S  
+npm install font-awesome -S
+ng g module modules/employees --module=app
+ng g component modules/employees/employee --module=modules/employees
+ng g component modules/employees/employee-list --module=modules/employees
+
+
+
+------------Project Failure----------------------------------------------------------------
+--------------------New Project------------------------------------
+
+
+
+
+
+Git Repository Commands_________________________
+
+
+Create branch:
+$git checkout -b  user-branch
+
+Switch to master branch:
+$git checkout master
+
+Git commands to push datas:
+Go to the directory where your angular project is stored Eg:C:Users/Lenovo/Crug(The folder)/
+then
+Open git bash there
+$git init
+$git add .
+$git commit -m "Message"
+$git remote add crug(the project folder inside Crug(the folder)) https://github.com/yuga-web/Angular.git
+$git remote -v
+--------------------------------------(push to master)
+$git push -u crug master
+--------------------------------------(push to branch)
+$git checkout -b user-branch
+$git push -u crug user-branch(but while cloning you wont be able to clone the repo in user branch)
+--------------------------------------------------------------------------------------------------------(if any issuses in pushing use...)
+$git push -f crug master
+ 
+-----------------------------------------------------(cloning)
+$git clone http:/......
+
+----------------------------------------------------------(If folder is in branch then checkout from master, the folder will be downloaded)
+$git checkout user-branch(the branch name in which the folder exists)
+
+---------------------------------------------------------(after cloning)
+run command in VS Code: npm install
+
+
+-----------mysql---------------
+
+CREATE TABLE user (
+  id  	INT(11) NOT NULL AUTO_INCREMENT,
+  firstname VARCHAR(45) NOT NULL,
+  lastname VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  mobile VARCHAR(20) NOT NULL,
+  ssn  	INT(11) NOT NULL
+  status VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id)
+) ;
+CREATE TABLE authuser (
+  id  	INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(45) NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  password VARCHAR(20) NOT NULL,
+  PRIMARY KEY (id)
+) ;
+
+insert into  authuser values('1','yuga','yuga@gmail.com','admin');
+
+ALTER TABLE authuser DROP email;
+CREATE TABLE currency (
+  currency_id  	INT(11) NOT NULL AUTO_INCREMENT,
+  currency_code VARCHAR(45) NOT NULL,
+  currency_name VARCHAR(45) NOT NULL,
+  PRIMARY KEY (id)
+) ;
+
+ALTER TABLE currency DROP id;
+CREATE TABLE expenseusertype (
+  expenseusertype_id  	INT(11) NOT NULL,
+  expenseusertype_name VARCHAR(45) NOT NULL,
+  PRIMARY KEY (expenseusertype_id )
+) ;
+
+
+
+
+create component: ng g c component_name
+create service: ng g s service_name
+create module:ng generate module module_name  --routing
+---------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

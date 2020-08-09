@@ -1,0 +1,31 @@
+ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0px;
+}
+
+ul li {
+    display: inline-block;
+}
+
+ul li::after {   
+    content: '';
+    display: block; 
+    border-bottom: 2px solid #fefefe;    
+    margin-top: 5px;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+}
+ul li:hover::after { 
+    transform: scaleX(1);
+}
+
+ul li a {
+    padding: 0px 25px;
+    color: #fefefe;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
