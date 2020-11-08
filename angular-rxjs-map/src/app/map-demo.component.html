@@ -1,0 +1,18 @@
+<b>Student Names</b>
+<ul>
+  <li *ngFor="let name of stdNames$ | async" >
+    {{name}}
+  </li>
+</ul>
+
+<b>Country Name</b>
+<div *ngIf="countryName$ | async as myCountryName">
+  {{myCountryName}} 
+</div>
+
+<b>Country States</b>
+<ul>
+  <li *ngFor="let state of countryStates" >
+    {{state}}
+  </li>
+</ul>
