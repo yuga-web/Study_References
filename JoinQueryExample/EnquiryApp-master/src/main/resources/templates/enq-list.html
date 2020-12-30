@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Enquiry List</title>
+        <meta charset="UTF-8">              
+        <link th:href="@{/main.css}" type="text/css" rel="stylesheet" />
+        <script th:src="@{/jquery-3.4.1.min.js}"></script>        
+        <script>
+            var courses;
+            $(document).ready(function () {
+                $("#id_instId").change(function () {
+                    var instId = $("#id_instId").val();
+                    //console.log(instId);
+                    window.location = 'enq-list?instId=' + instId;
+                });
+            });
+            function openForm(enquiryId) {
+                $("#id_enquiryId").val(enquiryId);
+                $('#followupForm').css("display", "block");
+                $('#followupForm').css('left', event.pageX);
+                $('#followupForm').css('top', event.pageY);
+                $('#followupForm').css('display', 'inline');
+                $("#followupForm").css("position", "absolute");
+            }
+
+            function closeForm() {
+                $('#followupForm').css("display", "none");
+            }
+        </script>
+    </head>
+    <body>
+        <div th:insert="menu"></div>
+
+        <div class="main">
+
+            <div th:insert="header"></div>
+            <div style="text-align: center; padding-bottom: 20px;">
+                <select id="id_instId">
+                    <option value=""></option>
+                    <option th:each="i : ${instituteList}" th:value="${i.instituteId}" th:text="${i.name}">
+                    </option>
+                </select>
+            </div>
+            <table  border="1" width="90%" align="center" cellpadding="5">
+                <tr>
+                    <td class="fheading" colspan="8" >Enquiry List</td>
+                </tr>
+                <tr>
+                    <th>SR</th>
+                    <th>DOE</th>
+                    <th>NAME</th>
+                    <th>PHONE</th>
+                    <th>COURSES</th>                
+                    <th>FEES</th>                                
+                    <th>F/U</th>                                
+                    <th>ACTION</th>                                
+                </tr>    
+                <tr th:each="dto,itr : ${enquiryList}">
+                    <td th:text="${itr.count}">SR</td>
+                    <td th:text="${#dates.format(dto.doe, 'dd-MMM-yyyy')}">DOE</td>
+                    <td >
+                        <a th:href="@{'/enquiry-detail/'+${dto.enquiryId}}" th:text="${dto.name}"></a>
+                    </td>
+                    <td th:text="${dto.phone}">PHONE</td>
+                    <td th:text="${dto.courses}">COURSES</td>                
+                    <td th:text="${dto.fees}">FEES</td>                                
+                    <td>
+                        <span th:text="${dto.followUpCount}"></span>
+                        <a href="javascript:void(0)" th:attr="onclick=|openForm(${dto.enquiryId})|">Add F/U</a>
+                    </td>                                
+                    <td>Edit |  <a th:href="@{'/enquiry-delete/'+${dto.enquiryId}}">Delete</a></td>                                
+                </tr>    
+
+            </table>
+        </div>
+        <div class="form-popup" id="followupForm">
+            <form  th:action="@{/save-followup}" method="post" class="form-container">
+                <input type="hidden" name="enquiryId" id="id_enquiryId"/>
+                <button type="button" class="btnX" onclick="closeForm()">X</button>
+                <h3>Add Followup</h3>
+                <textarea name="followup" width="100%" style="width: 100%" rows="5" ></textarea>
+                <button type="submit" class="btn">Save</button>
+            </form>
+        </div>
+    </body>
+</html>
