@@ -1,0 +1,78 @@
+{
+  "name": "material-angular-dashboard",
+  "version": "1.0.0",
+  "description": "Free material angular dashboard template with Google Material Design",
+  "keywords": [
+    "dashboard",
+    "angular",
+    "admin template",
+    "Material Design",
+    "Dark",
+    "google material design",
+    "ng"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "tlint": "ng lint",
+    "tlint:fix": "ng lint --fix",
+    "slint": "stylelint --syntax scss ./**/*.scss",
+    "slint:fix": "stylelint --syntax scss --fix ./**/*.scss",
+    "lint": "ng lint && stylelint --syntax scss ./**/*.scss"
+  },
+  "pre-commit": "lint",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CreativeIT/material-angular-dashboard"
+  },
+  "bugs": {
+    "url": "https://github.com/CreativeIT/material-angular-dashboard/issues"
+  },
+  "homepage": "https://github.com/CreativeIT/material-angular-dashboard",
+  "dependencies": {
+    "@angular/animations": "10.0.8",
+    "@angular/common": "10.0.8",
+    "@angular/compiler": "10.0.8",
+    "@angular/core": "10.0.8",
+    "@angular/forms": "10.0.8",
+    "@angular/http": "7.2.1",
+    "@angular/platform-browser": "10.0.8",
+    "@angular/platform-browser-dynamic": "10.0.8",
+    "@angular/router": "10.0.8",
+    "@types/googlemaps": "^3.30.18",
+    "classlist.js": "1.1.20150312",
+    "core-js": "2.5.6",
+    "d3": "3.5.17",
+    "material-angular-select": "1.0.0",
+    "material-design-lite": "1.3.0",
+    "nvd3": "1.8.6",
+    "rxjs": "6.5.5",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.3"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.1000.5",
+    "@angular/cli": "10.0.5",
+    "@angular/compiler-cli": "10.0.8",
+    "@angular/language-service": "10.0.8",
+    "@types/d3": "3.5.40",
+    "@types/material-design-lite": "1.1.15",
+    "@types/node": "^12.11.1",
+    "@types/nvd3": "1.8.38",
+    "codelyzer": "^5.1.2",
+    "node-sass": "^4.14.1",
+    "pre-commit": "1.2.2",
+    "stylelint": "9.2.1",
+    "stylelint-config-recommended-scss": "3.2.0",
+    "stylelint-config-standard": "18.2.0",
+    "stylelint-scss": "3.1.0",
+    "ts-node": "6.0.5",
+    "tslint": "5.10.0",
+    "tslint-angular": "1.1.2",
+    "tslint-config-airbnb": "5.9.2",
+    "typescript": "3.9.7"
+  }
+}
